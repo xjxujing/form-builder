@@ -27,8 +27,10 @@ export default {
       }
     }
   },
+
+  computed: {},
   created() {
-    console.log(this.field);
+    console.log(this.field.value);
   }
 };
 </script>

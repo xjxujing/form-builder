@@ -33,6 +33,7 @@ export default {
       formConfig.forEach(item => {
         const ComName = changeStr(item.type);
         item.component = `Base${ComName}`;
+        item.value = "";
       });
       return formConfig;
     }
