@@ -1,18 +1,35 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <FormBuilder :formConfig="formConfig" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import FormBuilder from "@/components/FormBuilder.vue";
+import { formConfig } from "@/views/formConfig";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    FormBuilder
+  },
+
+  data() {
+    return {
+      formConfig: []
+    };
+  },
+
+  created() {
+    this.formConfig = formConfig;
   }
 };
 </script>
+
+<style>
+.home {
+  background-color: #f7f8fa;
+  height: 100vh;
+}
+</style>
