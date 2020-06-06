@@ -1,18 +1,18 @@
 <template>
   <div class="home">
+    <van-button @click="$router.push('/about')">按钮</van-button>
     <FormBuilder :formConfig="formConfig" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import FormBuilder from "@/components/FormBuilder.vue";
 import { formConfig } from "@/views/formConfig";
 
 export default {
   name: "Home",
-  components: {
-    FormBuilder
+
+  props: {
+    id: String
   },
 
   data() {
@@ -23,6 +23,7 @@ export default {
 
   created() {
     this.formConfig = formConfig;
+    console.log("this.$props：", this.id);
   }
 };
 </script>
